@@ -23,6 +23,7 @@ A object for loading when fuction comlpete shows page
 - load stages
 - objectobserve
 - splash & progress
+- talks to REWIRE.io's build var when reload is neaded
 
 
 ♯rim
