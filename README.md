@@ -1,7 +1,7 @@
 Helpers
 =======
 
-A PHP/Jquery template set to help with common tasks mostly using Jquery after ready. The goal is to simply and quickly bypass things that I would normally find hard to control. This code is developed for webkit only and legacy gets left behind. Why? An old browser was new at one time but now it will in some way fail its internet driving lessons which means that it is now 'incompatable software'. It is not the job of a developer to hack the old, it is a developers job to hack the new.
+A PHP/Jquery template set to help with common tasks mostly using Jquery after ready. The goal is to simply and quickly bypass things that I would normally find hard to control and to taim new methods that currently have fuzzy implimentation. This code is developed for webkit only and legacy gets left behind. Why? An old browser was new at one time but now it will in some way fail its internet driving lessons which means that it is now 'incompatable software'. It is not the job of a developer to hack the old, it is a developers job to hack the new.
 Encoraging people to migrate, saving yourself time by showing that things may be switched off for legacy and providiing an alternative browser solution is the way to develop for the future.
 
 RIM
