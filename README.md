@@ -19,8 +19,7 @@ Redundant:
 #rim
 ====
 
-> **viewport replacement**. Over-come strange behavior with screen size and element position. Place everything inside
-> the rim. I called this 'rim' because I'm tired of getting f***ed by viewport and bad mobile browsers.
+> **viewport replacement**. Over-come strange behavior with screen size and element position.
 > The four divs inside #rim are to be deleted before each use. Put all elements inside #rim.
 
 - Handles page resizes
