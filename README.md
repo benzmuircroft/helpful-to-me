@@ -123,9 +123,12 @@ b .tytl and .hylt
 - .tytl css text-size 22px
 - .hylt css color #FFF
 
+d
+=
 
+**div shorthand**
 
-
+document.createElement('d') registers <d> as a valid tag with the browser
 
 
 
