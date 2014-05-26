@@ -1,5 +1,5 @@
-Helpers
-=======
+PolyHelpers
+===========
 
 A PHP/Jquery template set to help with common tasks mostly using Jquery after ready. The goal is to simply and quickly bypass things that I would normally find hard to control. This code is developed for webkit only (legacy gets left behind).
 
