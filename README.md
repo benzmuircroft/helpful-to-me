@@ -125,7 +125,7 @@ b .tytl and .hylt
 
 
 
-font-weight: normal
+
 
 
 
