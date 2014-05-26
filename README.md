@@ -16,7 +16,7 @@ Redundant:
 - viewport
 
 
-#rim
+♯rim
 ====
 
 > **viewport replacement**. Over-come strange behavior with screen size and element position.
