@@ -9,70 +9,53 @@
 			margin: 0px;
 			overflow: hidden;
 			}
+		.inp{
+        		white-space: nowrap;
+        		overflow: hidden;
+    			} 
+    		.inp br{
+        		display:none;
+    			}
+    		.inp * {
+        		display:inline;
+        		white-space:nowrap;
+    			}
 	</style>
 </head><body>
 
+	<div class="inp email" contenteditable="plaintext-only" style="background: #FFF;height: 14px;line-height: 14px;width: 593px;padding: 5px;text-align: center;margin-bottom: 10px;color: #CCC;" water="Your e-mail address for identification" wcol="#CCC">
+		Your e-mail address for identification
+	</div>
 
 
-
-<script>
-
-  $(function(){
-
-    $('.inp')
-			.bind('textchange keydown keyup',function(e){
-				//var up=(e.type==='keyup')?1:0;
-				if(e.which!==13){
-					if($(this).hasClass('email')){
-						if(em.test($(this).text())){//email was ok
-							$(this).css({'color':'#17b917'});
-							if($('.streamtest').text().indexOf($('.streamtest').attr('water'))!==-1){
-								session();
-								loaduser($(this).text());
-								}
-							else if(($('.streamtest').text().indexOf($('.streamtest').attr('water'))===-1)&&
-							   ($('.streamtest').text().indexOf('http')!==-1)&&
-							   ($('.streamtest').text().indexOf(';stream')!==-1||$('.streamtest').text().toLowerCase().indexOf('mp3')!==-1||$('.streamtest').text().indexOf(':')!==-1)
-							   ){////radio was complete lets test stream
-								session();
-								new_radio($('.streamtest').text());
-								}}
-						else{
-							$(this).css({'color':'#f41212'});//incomplete bad email
-							}}
-					else if($(this).hasClass('streamtest')){
-						if(!em.test($('.email').text())){
-							$('.email').css({'color':'#f41212'});//email is bad
-							}
-						else{
-							if(($(this).text().indexOf($(this).attr('water'))===-1)&&
-							   ($(this).text().indexOf('http')!==-1)&&
-							   ($(this).text().indexOf(';stream')!==-1||$(this).text().toLowerCase().indexOf('mp3')!==-1||$(this).text().indexOf(':')!==-1)
-							   ){
-								session();
-								new_radio($(this).text());//lets test stream
-								}}}
-				}else{/*13*/return false;}})
-			.bind('click',function(){
-				$(this).css({'color':'#000'});
-				if($(this).text().indexOf($(this).attr('water'))!==-1){
-					$(this).text('');
-					var _this=this;
-					setTimeout(function(){enterinp(_this);},150);//was 150
-					}})
-			.bind('blur',function(){
-				if($(this).text().match(/^\s*$/)){//spaces
-					$(this).css({'color':$(this).attr('wcol')});
-					$(this).text($(this).attr('water'))
-					}})
-			.bind('paste',function(){
-				$(this).css({'color':'#000'});
-				if($(this).text().indexOf($(this).attr('water'))!==-1){$(this).text('');});
-				});
-			function enterinp(_this){$(_this).trigger('click');}
-			
-			
-			});
+	<script>
+	$(function(){
+		$('.inp')
+		.bind('textchange keydown keyup',function(e){
+			if(e.which!==13){//return
+				if($(this).hasClass('email')){}
+				else if($(this).hasClass('???')){}
+				}
+			else{/*13*/return false;}})
+		.bind('click',function(){
+			$(this).css({'color':'#000'});
+			if($(this).text().indexOf($(this).attr('water'))!==-1){
+				$(this).text('');//cursor is kicked out!
+				var _this=this;
+				setTimeout(function(){inp(_this);},150);//jump cursor back in
+				}})
+		.bind('blur',function(){
+			if($(this).text().match(/^\s*$/)){//empty or spaces
+				$(this).css({'color':$(this).attr('wcol')});
+				$(this).text($(this).attr('water'));
+				}})
+		.bind('paste',function(){
+			$(this).css({'color':'#000'});
+			if($(this).text().indexOf($(this).attr('water'))!==-1){
+				$(this).text('');
+				});});
+		function inp(_this){$(_this).trigger('click');}
+		});//ready
 	</script>
 			
 </body></html>
