@@ -14,6 +14,15 @@ Redundant:
 - radio
 - input
 - viewport
+ 
+
+JHTML
+=====
+
+A object for loading when fuction comlpete shows page
+- load stages
+- objectobserve
+- splash & progress
 
 
 ♯rim
