@@ -8,11 +8,15 @@
 	document.createElement('d');
 </script>
 <style>
-	tre{font-weight: bold;}
-	mt{ float: left;
+	tre{	font-weight: bold;
+	}
+	mt{ 
+		float: left;
 		clear: both;
+		margin-top: 5px;
 		}
-	lt{ float: left;
+	lt{ 
+		float: left;
 		clear: both;
 		position: relative;
 		margin-left: 5px;
@@ -29,9 +33,7 @@
 	lt > *, mt > *{color: #000!important;}
 </style>
 <div style="position: absolute;left: 10px;width: 143px;text-align: left;">
-	<br>Client Community<br>
 	
-	<br>
 	
 	
 	<tre>
