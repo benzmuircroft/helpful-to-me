@@ -50,7 +50,7 @@ TODO: device orientation rim rotation
 - Paste
 - No return and one line only
 - CSS styled
-- 
+
 TODO: Get pasted text start-end text position
 
 .btn
