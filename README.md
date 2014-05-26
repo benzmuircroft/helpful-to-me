@@ -82,14 +82,17 @@ TODO: Get pasted text start-end text position
 ====
 
 **css background-image replacement** 
+
 Classes: 
+
 - **.cenw**
 - **.cenh**
 - **.cenb**
 - **.xywh** Absolute x, y, width, height. mesurments can be px or %; 
 
+```html
     <div class="bgi whxy" src="image.png" whxy="0px,0px,100%,100%"></div>
-
+```
 
 
 
