@@ -66,4 +66,4 @@ TODO: Get pasted text start-end text position
 .sel
 ====
 
-***select replacement***
+**select replacement**
