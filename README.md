@@ -5,13 +5,21 @@ RIM
 > the rim. I called this 'rim' because I'm tired of getting f***ed by viewport and bad mobile browsers.
 > The four divs inside #rim are to be deleted before each use. Put all elements inside #rim.
 
+- Handles page resizes
+- Always fits the screen on mobile (Size is 'as-is' on browsers)
+- Makes viewport unnessesary
+- rim widht/height px/% is now the correct standard for screen size and element position
+- relative and absolute positions behave
+
+TODO: device orientation rim rotation
+
 .inp
 ====
 
 > Content editable divs that behave!
 
-- watermarks with no extra elements
-- color text for error or success easy to add
-- paste
-- no return and one line only
-- css
+- Watermarks with no extra elements
+- Color text for error or success easy to add
+- Paste
+- No return and one line only
+- CSS styled
