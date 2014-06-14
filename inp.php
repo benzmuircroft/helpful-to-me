@@ -53,7 +53,7 @@
 			$(this).css({'color':'#000'});
 			if($(this).text().indexOf($(this).attr('water'))!==-1){
 				$(this).text('');
-				});});
+				}});
 		function inp(_this){$(_this).trigger('click');}
 		});//ready
 	</script>
