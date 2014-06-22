@@ -26,3 +26,11 @@ self.addEventListener('message',function(e){
     if(e.data==='k'){
     	self.postMessage(JSON.stringify({'some':'thing'}));
     	}});
+
+
+
+
+
+
+
+//
