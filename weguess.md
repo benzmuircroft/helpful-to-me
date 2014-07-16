@@ -24,7 +24,7 @@ returns JSON:
 
 Notes: 
 
- - **imei** has an underscore (_) seperated result. The first number represents the account that holds in-app purchases of question categorys, the second number represents the device id which current user is playing under (an account is allowed up to 3 devices at present).
+**imei** has an underscore (_) seperated result. The first number represents the account that holds in-app purchases of question categorys, the second number represents the device id which current user is playing under (an account is allowed up to 3 devices at present).
 
 
 
@@ -66,7 +66,7 @@ category_ask_random_question
 
 **Ask WeGuess to return a random question from a category. The question returned has not yet been answered by the user.**
 
-Note: Should we also return the number of questions remaining and/or percent of questions remaining unanswered in the category?
+Notes: Should we also return the number of questions remaining and/or percent of questions remaining unanswered in the category?
 
 
 Accepts parameters:
@@ -107,4 +107,4 @@ returns JSON:
 
 Notes:
 
- - **user_total_category_score** value is user points based on seconds_left + number_of_people_who_answered_the_same (not a percentage!)
+**user_total_category_score** value is user points based on seconds_left + number_of_people_who_answered_the_same (not a percentage!)
