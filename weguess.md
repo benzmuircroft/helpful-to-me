@@ -5,6 +5,8 @@ WeGuess PHP API
 get_did_info
 ------------
 
+**Ask WeGuess who in a family is playing and what categories are available to them.**
+
 
 accepts parameters:
 
@@ -31,6 +33,8 @@ Notes:
 
 create_new_session
 ------------------
+
+**Ask WeGuess if the user is a first time player or if they have been playing for a while. If the user is new it will create a new session for the user to hold thier progress in the game. If the user is not new then it will ask if the users last session is over a month old, if true it will renew the users session (resetting their progress to zero). If the user is not new and they have answered all the available questions (questions they have purchased) it will renew the users session. If the user is not new but has not yet completed all the avaliable questions it will return the users current progress.**
 
 
 accepts parameters:
