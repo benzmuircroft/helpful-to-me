@@ -107,4 +107,4 @@ returns JSON:
 
 Notes:
 
-**user_total_category_score** value is user points based on seconds_left + number_of_people_who_answered_the_same (not a percentage!)
+**user_total_category_score** value is user points based on **seconds_left** + **number_of_people_who_answered_the_same** (not a percentage!)
