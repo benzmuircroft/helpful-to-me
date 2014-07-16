@@ -64,7 +64,9 @@ returns JSON of 4 posible result types:
 category_ask_random_question
 ----------------------------
 
+**Ask WeGuess to return a random question from a category. The question returned has not yet been answered by the user.**
 
+Note: Should we also return the number of questions remaining and/or percent of questions remaining unanswered in the category?
 
 
 (category = 1, session_id = 1)
@@ -76,7 +78,7 @@ category_ask_random_question
 
 returns JSON:
 
-> {"question_id":1,"question:"Why?","answer1":"because!","percent1":"16","answer2":"because!","percent2":"11","answer3":"because!","percent3":"32","answer4":"because!","percent4":"5","answer5":"because!","percent5":"6","answer6":"because!","percent6":"30"}
+> {"question_id":1,"question:"Why?","answer1":"because A!","percent1":"16","answer2":"because B!","percent2":"11","answer3":"because C!","percent3":"32","answer4":"because D!","percent4":"5","answer5":"because E!","percent5":"6","answer6":"because F!","percent6":"30"}
 
 
 
