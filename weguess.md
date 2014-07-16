@@ -57,5 +57,25 @@ returns JSON of 4 posible result types:
 
 
 
+category_ask_random_question
+----------------------------
+
+
+
+
+(category = 1, session_id = 1)
+
+
+```javascript
+"http://weguess.mobi/api.php?f=category_ask_random_question&category=1&session_id=1"
+```
+
+returns JSON:
+
+> {"question_id":1,"question:"Why?","answer1":"because!","percent1":"16","answer2":"because!","percent2":"11","answer3":"because!","percent3":"32","answer4":"because!","percent4":"5","answer5":"because!","percent5":"6","answer6":"because!","percent6":"30"}
+
+
+
+
 
 
