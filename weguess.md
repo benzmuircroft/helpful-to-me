@@ -111,3 +111,50 @@ returns JSON:
 Notes:
 
 **user_total_category_score** value is user points based on **seconds_left** + **number_of_people_who_answered_the_same** (not a percentage!)
+
+
+
+
+
+set_leaderbord_name
+--------------------
+
+
+**Ask User If they want to be part of the leaderbord? Name must have underscore replacing spaces!**
+
+Accepts parameters:
+
+(new_name = bob_smith, session_id = 1)
+
+
+```javascript
+"http://weguess.mobi/api.php?f=set_leaderbord_name&new_name=bob_smith&session_id=1"
+```
+
+Returns 'done'
+
+
+
+
+whois_in_category_leaderbord
+----------------------------
+
+
+**Get an un-ordered list of users with 'leaderbord names' (sortable by number of category questions answered, category score or a mixture of the two). Each user is identifyed by the session_id**
+
+
+Accepts parameters:
+
+
+(category = 1)
+
+```javascript
+"http://weguess.mobi/api.php?f=whois_in_category_leaderbord&category=1"
+```
+
+Returns JSON:
+
+> {"session_ids":{"1":{"user_name":"bob_smith","questions_completed":"150","score":"22"},"4":{"user_name":"jane_doe","questions_completed":"233","score":"174"}}}
+
+
+
