@@ -97,7 +97,7 @@ Accepts parameters:
 
 
 ```javascript
-"http://weguess.mobi/api.php?f=answer_question_score_minus_timeleft&category=1&question_id=1&answer_number=6&seconds_left=149&session_id=1"
+"http://weguess.mobi/api.php?f=answer_question_score_minus_seconds_left&category=1&question_id=1&answer_number=6&seconds_left=149&session_id=1"
 ```
 
 returns JSON:
