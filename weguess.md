@@ -91,6 +91,9 @@ answer_question_score_minus_timeleft
 ------------------------------------
 
 
+**Update WeGuess's record of how many users answered the question, return the users new score and the answer's new percentages.**
+
+
 Accepts parameters:
 
 (category = 1, question_id = 1, answer_number = 6, seconds_left = 149, session_id = 1)
