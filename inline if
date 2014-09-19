@@ -38,6 +38,8 @@ $.A=0;
 window.A=0;
 
 
+//or a global variable you can wipe clean
+
 var G=window;    
 G.A=1;
 (G.A)&&[console.log('hey!!')];
