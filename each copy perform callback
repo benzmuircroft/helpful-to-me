@@ -1,0 +1,30 @@
+
+
+
+
+var ᐁ={};
+
+
+var ar1=[0,1,2,3,4];//I might not want to change ar1 on done so we leave it unaltered 
+
+var ar2;
+
+
+ᐁ.each=function(list,perform,callback){
+    var copy=list.slice(0);
+    function next(i){if(i<list.length){iterator(i);}else{callback(copy);}}
+    function iterator(i){
+       copy[i]=perform(copy[i],i);//index,value
+       i+=1;
+       next(i);
+       }
+     iterator(0);
+     }
+
+
+ᐁ.each(ar1,function(i,v){v+=1;console.log(i,v);return v;},function(r){ar2=r;console.log('done');});
+
+
+
+
+console.log(ar1,ar2);  // [0, 1, 2, 3, 4] [1, 2, 3, 4, 5]
