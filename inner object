@@ -17,22 +17,23 @@ console.log(main.propertyName);
 
 
 
+
+
 //pass the function call to the inner object from the outside
 
-var A=function(){
-    var $A=this;
-    this[0]={'B':function(str,obj,arr){
+var Main=function(){
+    this[0]={'isknown':function(str,obj,arr){
         console.dir([str,obj,arr]);
         this[0].text=str+' '+obj.who;
         }};
     this.B=function(str,obj,arr){
         console.dir(this);
-        this[0]['B'].apply(this,arguments);
+        this[0]['isknown'].apply(this,arguments);
         }}
 
-var a=new A('t');
+var main=new Main();
 
-a.B('hello',{'who':'world','n':1},[0,1,2,3]);
+main.isknown('hello',{'who':'world','n':1},[0,1,2,3]);
 
 
 
@@ -40,6 +41,8 @@ a.B('hello',{'who':'world','n':1},[0,1,2,3]);
 
 
 //putting them together to loop through one-or-many objects and give you one-or-many results
+//hiding the the wires... (enumerable:false)
+
 
 
 var Main=function(){
