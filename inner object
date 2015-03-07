@@ -1,0 +1,72 @@
+//pass the property to the inner object from the outside
+
+var main={
+    0:{},
+    length:1,
+    get propertyName(){
+        return this[0].propertyName;
+        },
+    set propertyName(value){
+        this[0].propertyName=value;
+        delete this.propertyName;
+        }}
+
+
+main.propertyName='rbg(255,255,0)';
+console.log(main.propertyName);
+
+
+
+//pass the function call to the inner object from the outside
+
+var A=function(){
+    var $A=this;
+    this[0]={'B':function(str,obj,arr){
+        console.dir([str,obj,arr]);
+        this[0].text=str+' '+obj.who;
+        }};
+    this.B=function(str,obj,arr){
+        console.dir(this);
+        this[0]['B'].apply(this,arguments);
+        }}
+
+var a=new A('t');
+
+a.B('hello',{'who':'world','n':1},[0,1,2,3]);
+
+
+
+
+
+
+//putting them together to loop through one-or-many objects and give you one-or-many results
+
+
+var Main=function(){
+    this[0]={'isknown':function(str,obj,arr){console.dir([str,obj,arr]);this[0].text=str+' '+obj.who;}};
+    this.length=1;
+    }
+Main.prototype={
+     propertyName:undefined
+    ,isknown:undefined
+    }
+Object.defineProperty(Main.prototype,"propertyName",{
+     get:function(){var result=[];for(var i=0;i<this.length;i++){result[i]=this[i].propertyName;}return (list.length<1)?result:result[0];}
+    ,set:function(value){for(var i=0;i<this.length;i++){this[i].propertyName=value;}delete this.propertyName;return;}
+    ,enumerable:false
+    });
+Object.defineProperty(Main.prototype,"isknown",{//must match real this[0] isKnown method
+     value:function(str,obj,arr){var result=[];for(var i=0;i<this.length;i++){result[i]=this[i]["isknown"].apply(this,arguments);}return (list.length<1)?result:result[0];}
+    ,enumerable:false
+    });
+
+
+
+var main=new Main();
+
+main.propertyName='rbg(255,255,0)';
+main.isknown('hello',{who:'world!'});
+
+
+
+
