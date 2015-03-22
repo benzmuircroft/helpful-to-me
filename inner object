@@ -54,12 +54,12 @@ Main.prototype={
     ,isknown:undefined
     }
 Object.defineProperty(Main.prototype,"propertyName",{
-     get:function(){var result=[];for(var i=0;i<this.length;i++){result[i]=this[i].propertyName;}return (list.length<1)?result:result[0];}
+     get:function(){var result=[];for(var i=0;i<this.length;i++){result[i]=this[i].propertyName;}return (result.length>1)?result:result[0];}
     ,set:function(value){for(var i=0;i<this.length;i++){this[i].propertyName=value;}delete this.propertyName;return;}
     ,enumerable:false
     });
 Object.defineProperty(Main.prototype,"isknown",{//must match real this[0] isKnown method
-     value:function(str,obj,arr){var result=[];for(var i=0;i<this.length;i++){result[i]=this[i]["isknown"].apply(this,arguments);}return (list.length<1)?result:result[0];}
+     value:function(str,obj,arr){var result=[];for(var i=0;i<this.length;i++){result[i]=this[i]["isknown"].apply(this,arguments);}return (result.length>1)?result:result[0];}
     ,enumerable:false
     });
 
