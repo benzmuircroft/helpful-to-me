@@ -1,0 +1,20 @@
+
+
+function loop(callwhile,callback,settings){
+    if(!settings.time||isNaN(settings.time)){settings.time=1;}
+    if(!settings.i||isNaN(settings.i)){settings.i=0;}
+    if(!settings.max||isNaN(settings.max)){settings.max=1;}
+    (function and(cw,cb,settings){
+        setTimeout(function(){
+            cw(settings);
+            ((settings.i+=1)==settings.max)?cb(settings):and(cw,cb,settings);
+            },settings.time,settings,callwhile,callback);
+        })(callwhile,function(settings){
+        callback(settings);
+        },settings);}
+
+
+
+
+
+loop(function(r){console.log(r.obj,r.i);return;},function(r){console.log(r.obj,'bye!!');},{time:100,i:0,max:10,obj:'ben'});
