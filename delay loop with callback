@@ -7,19 +7,16 @@ function loop(settings,callwhile,callback){
     (!settings.lt||isNaN(settings.lt))&&(settings.lt=1);
     (function and(settings,cw,cb){
         setTimeout(function(){
-            if(settings.return){cb(settings);}
+            if(settings.i==settings.lt){cb(settings);}
             else{
                 cw(settings);
-                ((settings.i+=1)==settings.lt)?cb(settings):and(settings,cw,cb);
+                ((settings.i+=1)<settings.lt)?and(settings,cw,cb):cb(settings);
                 }
             },settings.when,settings,callwhile,callback);
         })(settings,callwhile,function(settings){
         callback(settings);
         });}
 
-
-
-// this example uses the settings object during and after the loop
 
 
 
@@ -32,17 +29,19 @@ loop({i:0,lt:10,when:100,}
     console.log('bye!!');
     });
     
+/*
 
-var settings={lt:20,when:10};
-loop(
-function(){
-    if(settings.i==5){settings.return=true;}
+loop({lt:20,when:10}
+,function(r){
+    if(r.i==5){r.i=r.lt;return;}//break early
     else{
-        console.log(settings.i);
+        console.log(r.i);
+        return;
         }}
 ,function(){
     console.log('done');
     });
-        
-        
+    
+     
+*/   
 
