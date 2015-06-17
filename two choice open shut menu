@@ -1,0 +1,67 @@
+Just a bunch of notes.
+
+The element has a closed state and two sides the closed state button. 
+click the left side and the menu fills 95% with the left option (same for right)
+The remaining 5% is now BACk to closed state
+When inside an option the mouse cursor is auto
+You can put additional stuff inside an option....
+
+...may come in handy one day
+
+
+HTML BUILDER
+
+return html
+			+ᐊimg+src("R/qrbuy.png")+css("position: absolute;left: 30px;top: 220px;")+ǀᐅ
+			+ᐊdiv+id("pay__")+ᐅ
+			+	ᐊdiv+id("paybtc")+ᐅ
+			+		ᐊdiv+id("yesbtc")+ᐅ+ᐊǀdivᐅ
+			+	ᐊǀdivᐅ
+			+	ᐊdiv+id("payfox")+ᐅ
+			+		ᐊdiv+id("yesfox")+ᐅ+ᐊǀdivᐅ
+			+	ᐊǀdivᐅ
+			+ᐊǀdivᐅ
+			
+			
+CSS STUFF
+
+#pay__{position:absolute;top: 247px;left:30px;width:164px;height:52px;overflow: hidden;}
+#payfox{position:absolute;top: 0px;left: 82px;width:164px;height:52px;-webkit-transform: skewX(-30deg);}
+#yesfox{position:absolute;top: 0px;left: 82px;width:164px;height:52px;-webkit-transform: skewX(30deg);background:#28394d;}
+#paybtc{position:absolute;top: 0px;left: -85px;width:164px;height:52px;-webkit-transform: skewX(-30deg);}
+#yesbtc{position:absolute;top: 0px;left: -79px;width:164px;height:52px;-webkit-transform: skewX(30deg);background:#F4911A;}
+#payfox.hov,#paybtc.hov{cursor:pointer;background:rgba(255,255,255,0.1);}
+
+
+JQUERY FOR WHEN THE ELEMENT IS BUILT
+
+
+
+Required is an object called qmenu (rename as needed)
+
+      $('#paybtc').unbind().bind('mouseenter',function(){
+				if(qmenu.paymode!='btc'){$(this).addClass('hov');}
+				}).bind('mouseleave',function(){
+				$(this).removeClass('hov');
+				}).bind('click',function(){
+				$(this).removeClass('hov');
+				if(qmenu.paymode=='btc'){return;}
+				if(qmenu.paymode){qmenu.paymode=0;$(this).addClass('hov');}else{qmenu.paymode='btc';}
+				$('#yesbtc').css({'left':!qmenu.paymode?'-79px':'79px'});
+				$('#yesfox').css({'left':!qmenu.paymode?'82px':'76px'});
+				$('#paybtc').css({'z-index':2});
+				$('#payfox').css({'z-index':1});
+				});
+			$('#payfox').unbind().bind('mouseenter',function(){
+				if(qmenu.paymode!='fox'){$(this).addClass('hov');}
+				}).bind('mouseleave',function(){
+				$(this).removeClass('hov');
+				}).bind('click',function(){
+				$(this).removeClass('hov');
+				if(qmenu.paymode=='fox'){return;}
+				if(qmenu.paymode){qmenu.paymode=0;$(this).addClass('hov');}else{qmenu.paymode='fox';}
+				$('#yesbtc').css({'left':!qmenu.paymode?'-79px':'-73px'});
+				$('#yesfox').css({'left':!qmenu.paymode?'82px':'-76px'});
+				$('#paybtc').css({'z-index':1});
+				$('#payfox').css({'z-index':2});
+				});
