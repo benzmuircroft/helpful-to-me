@@ -1,0 +1,12 @@
+for(var f=[4,-1,-1],i=f[0];i!=f[1];i+=f[2]){console.log(i);}
+for(var f=[0, 5, 1],i=f[0];i!=f[1];i+=f[2]){console.log(i);}
+4
+3
+2
+1
+0
+0
+1
+2
+3
+4
