@@ -1,0 +1,9 @@
+//don't know why I might need this
+//ǃ	latin letter retroflex click	0703	451	0x1C3	&#451;
+//get the line number in a document by triggering an error
+
+var ǃ=function(e,t){console.log(t,'@',(e.stack.toString().split('<anonymous>')[2]).split(')')[0]);};
+
+
+//usage:
+try{e}catch(e){ǃ('custom text',e);}
