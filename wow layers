@@ -23,6 +23,27 @@ http://jsfiddle.net/ReZ9M/8/
 <div id="toplayer" class="layer">Top layer</div>
 
 
+//jquery
+var timeout=null;
+var clickts,clickls=0,dblclick=false;
+$(function(){
+    $('body').on('mousedown','.layer',function(){
+        dblclick=false;
+        clickts=+new Date();
+        if(clickts-clickls<700){dblclick=true;};
+        clickls=clickts;
+        if(dblclick){
+            $('body').addClass('important');
+            $('#bottomlayer').trigger('dblclick');}
+            });
+        $('#bottomlayer').on('dblclick',function(){
+            console.log('dblclick');
+            //alert(1);
+            setTimeout(function(){
+                $('body').removeClass('important');
+                },100);});});
+
+
 
 //notes 
 //make the mouse click thorugh the top layer
