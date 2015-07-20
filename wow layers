@@ -35,3 +35,7 @@ http://jsfiddle.net/ReZ9M/8/
 //fake click with a button hover instead of click
 //or a
 //menu to appear on another layer above both?
+
+
+
+////TODO: need a setTimeout for double click
