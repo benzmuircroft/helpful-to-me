@@ -24,7 +24,7 @@ http://jsfiddle.net/ReZ9M/8/
 
 
 
-//notes
+//notes 
 //make the mouse click thorugh the top layer
 //to alow click drag events on the bottom layer.
 //on the click, the top layer gets pointer
