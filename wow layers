@@ -1,5 +1,4 @@
-http://jsfiddle.net/ReZ9M/8/
-
+http://jsfiddle.net/ReZ9M/65/
 
 //css
 .layer{
@@ -39,15 +38,25 @@ $(function(){
         if(clickts-clickls<700){dblclick=true;};
         clickls=clickts;
         if(dblclick){
-            $('body').addClass('important');
-            $('#bottomlayer').trigger('dblclick');}
-            });
+            $('body').addClass('user-select-none');
+            $('#bottomlayer').trigger('dblclick');
+            }
+        else{console.log('click');}
+        });
         $('#bottomlayer').on('dblclick',function(){
             console.log('dblclick');
             //alert(1);
             setTimeout(function(){
-                $('body').removeClass('important');
-                },100);});});
+                $('body').removeClass('user-select-none');
+                },100);
+            $('#toplayer').trigger('tooltip');
+            });
+    $('#toplayer').on('tooltip',function(){
+        //rules here
+        console.log($(this).text());
+        })
+    });
+
 
 
 
@@ -65,4 +74,4 @@ $(function(){
 
 
 
-////TODO: need a setTimeout for double click  http://jsfiddle.net/ReZ9M/60/
+
