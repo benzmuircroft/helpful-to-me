@@ -1,11 +1,12 @@
 
 
 var s='loooooooooooooooooooooooooong base64 string';
+var l=150;
 var m="";
 for(var i=0;;++i){
-    if(s.length>175){
-      m+="\n+'"+s.slice(0,175)+"'";
-      s=s.slice(175);
+    if(s.length>l){
+      m+="\n+'"+s.slice(0,l)+"'";
+      s=s.slice(l);
       }
     else{
       m+="\n+'"+s+"'";
