@@ -1,0 +1,13 @@
+  var kp=forge.pki.rsa.generateKeyPair({bits: 896,e:0x10001});
+	var m=['qr'];
+	m[1]=kp.privateKey.sign(forge.md.sha1.create().update(m[0],'utf8'));
+	console.log(m);
+	console.log(kp.publicKey.verify(forge.md.sha1.create().update(m[0],'utf8').digest().bytes(),m[1]));
+	var asked='did you read this?';
+	var ask=kp.publicKey.encrypt('did you read this?');
+	var read=kp.privateKey.decrypt(ask);
+	var r=['yes!'];
+	console.log('yes?');
+	r[1]=kp.privateKey.sign(forge.md.sha1.create().update(r[0],'utf8'));
+	r[2]=kp.privateKey.sign(forge.md.sha1.create().update(read,'utf8'));
+	console.log(kp.publicKey.verify(forge.md.sha1.create().update(asked,'utf8').digest().bytes(),r[2]));
