@@ -11,3 +11,68 @@
 	r[1]=kp.privateKey.sign(forge.md.sha1.create().update(r[0],'utf8'));
 	r[2]=kp.privateKey.sign(forge.md.sha1.create().update(read,'utf8'));
 	console.log(kp.publicKey.verify(forge.md.sha1.create().update(asked,'utf8').digest().bytes(),r[2]));
+	
+	
+	
+	
+	
+// i can test making a semi-permanent key this way
+// first make the key
+// then output the pem strings to the console
+// next hard code the pem on the sever, convert it back to a key and encript something (show as hex in the console)
+// then take the hex and hard code that and decrypt it to proove it ouputs the same something!
+	
+	
+			var forge=require('../node_modules/node-forge');
+
+
+			//var key=forge.pki.rsa.generateKeyPair({bits: 896,e:0x10001});
+			//console.log('key-------------->');
+			//console.log(key);
+
+			//console.log('dec-------------->');
+			//var encrypted = key.publicKey.encrypt('poop');
+			//console.log(encrypted);
+			//console.log(key.privateKey.decrypt(encrypted));
+
+
+			//var pem={
+			//	privateKey:forge.pki.privateKeyToPem(key.privateKey).toString()
+			//,	publicKey:forge.pki.publicKeyToPem(key.publicKey).toString()
+			//	}
+			
+			
+				
+			//console.log('pem-------------->');
+			//console.log(pem);
+			
+			//key={
+			//	privateKey:forge.pki.privateKeyFromPem(pem.privateKey)
+			//,	publicKey:forge.pki.publicKeyFromPem(pem.publicKey)
+			//	};
+			//console.log('key-------------->');
+			//console.log(key);
+
+			//console.log('dec-------------->');
+			//var encrypted = key.publicKey.encrypt('poop');
+			//console.log(encrypted);
+			//console.log(key.privateKey.decrypt(encrypted));
+
+
+
+
+
+			var pem={ 
+				privateKey: '-----BEGIN RSA PRIVATE KEY-----\r\nMIICEwIBAAJxANSenYqVlohx/IF/iphArGy4Cw6ZhQe4/gXMXXPXZEFVOWjj6tow\r\n1yIST5+TDRESfuHBjWRCQrQQP5yNPFYlAw/d1JkXBoZawJXpXJ1XVXl24zpw4eNx\r\nMCWplvY8Cob3pElkVVd9HsTM4TuHijxjXAcCAwEAAQJwNQLnHKp3QcXJwy/dimB1\r\nnRW2DAnS1T4Wd7OgiUVmxbNOAQzyfTw4J1KRb6PmWh9Wa0sqyZiLsQD3tBHhbu9n\r\n8BluRAFW9igwXsUp/6T6lGYyHU1LLCUY/Wwta60StBcGxReX/I80Y5XcrSTdAeLV\r\nIQI5APEytgYfkghUbdIAQOeDN4LXnASG7Aqa0uYxQGS5dUMkuiP5KUnWtYjlIbx0\r\nLZlhBwIcJwsp8wGlAjkA4artn5vFMcM/6BDaNfTs3kDQ73tEt3PHa1cIX6/29Qxi\r\nptFKrZ5++cyw8G7itsqTi3nYiP5DHzsCOQC7aebr7R4AYPIQSegku92nSjdNgTTp\r\nrJGREdXyLfTCnkgQaas+V5oo67mCAFfqJO1YI13nG8pZjQI4ZvhnlPyu7hX5gxqt\r\ndxFbQ86vh5bntA3QYNpFp+PS+9265gN5398CcVlFI3B1YpLs4Ceo9lmOpyECOQDX\r\ns6Vky44o3qdA5dCtLJMCmg9Tjbj2mPFUBFohrMfm03kUUaCGAdlb1zFhbNt6djio\r\n0ET8CV7R9w==\r\n-----END RSA PRIVATE KEY-----\r\n'
+	  		,	publicKey: '-----BEGIN PUBLIC KEY-----\r\nMIGMMA0GCSqGSIb3DQEBAQUAA3sAMHgCcQDUnp2KlZaIcfyBf4qYQKxsuAsOmYUH\r\nuP4FzF1z12RBVTlo4+raMNciEk+fkw0REn7hwY1kQkK0ED+cjTxWJQMP3dSZFwaG\r\nWsCV6VydV1V5duM6cOHjcTAlqZb2PAqG96RJZFVXfR7EzOE7h4o8Y1wHAgMBAAE=\r\n-----END PUBLIC KEY-----\r\n'
+	  			};
+	  		var key={
+				privateKey:forge.pki.privateKeyFromPem(pem.privateKey)
+			,	publicKey:forge.pki.publicKeyFromPem(pem.publicKey)
+				};
+
+
+			var encrypted='bc0b07de84cabc744978231031a5b8cfb252d21905595f31bf4ddf957729fbf051c681a1345b39a2bd20757261718372665b8297a26679bd72d57a5b12560dd87bfea7283c4e55fe27deaca3701b128b306ab500febc1559a895512709ad680ba992c6b09379dfcc272a95993881adb0';
+			console.log(key.privateKey.decrypt(forge.util.hexToBytes(encrypted)));
+			//var encrypted=forge.util.bytesToHex(key.publicKey.encrypt('poop'));
+			//console.log(encrypted);
