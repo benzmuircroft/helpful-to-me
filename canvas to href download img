@@ -1,0 +1,30 @@
+make an image on w3schools to download
+
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="myCanvas" width="36" height="36" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+
+<script>
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.font = "37px Arial";
+ctx.fillStyle='#FDFFBB';
+ctx.fillText("⛁",2,36);
+ctx.fillText("⛁",3,36);
+ctx.fillText("⛁",3,35);
+ctx.fillText("⛁",4,36);
+var link=c.toDataURL("image/png").replace('data:image/png;','');
+var a = document.createElement('a');
+var linkText = document.createTextNode("download");
+a.appendChild(linkText);
+a.title = "download";
+a.href = "data:application/octet-stream;"+link;
+document.body.appendChild(a);
+</script>
+
+</body>
+</html>
