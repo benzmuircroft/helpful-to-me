@@ -1,0 +1,59 @@
+var wss=require('../node_modules/ws').Server//alow the crojob to talk to N
+,	cron=[]
+	;
+cron[1]=new wss({port:8007});
+cron[1].on('connection',function(s){
+	s.on('message',function(m){
+		//do something with m
+		});});
+		
+	
+	
+	//try{cron.send('test');}catch(e){console.log(e);}
+	
+	
+	
+	
+	
+	////////////////////////////in the other file
+	
+	
+var ws=require(__dirname+'/../../node_modules/ws')
+,	JSON=require(__dirname+'/../../node_modules/JSON')
+,	h=[];//client sends s a request, s relays it to h, h gets it and gives it to s, s relays it to the client.
+function ɥ(n,p,m){//clean up dead socket
+	h[n].removeEventListener('onopen',h[n].o);
+	h[n].removeEventListener('onmessage',h[n].m);
+	//delete s[n].WHEN['@'];
+	H(n,p,m);
+	}
+function H(n,p,m){//connect or reconnect
+	h[n]=new ws('ws://localhost:'+p);
+	h[n].m=function(m){//message
+		var n=arguments.callee.info.n;
+		m=JSON.parse(m);
+		};
+	h[n].m.info={n:n};
+	h[n].o=function(){//open
+		var n=arguments.callee.info.n;
+		var p=arguments.callee.info.p;
+		h[n].on("message",h[n].m);
+		//console.log('open');
+		if(m){
+	    
+	
+	    if(h[n].readyState==1){
+				try{h[n].send(m);}catch(e){console.log('CRON ERR:',e,'@ helper::ready;;');}
+	
+	      }//readyState
+			else{
+				console.log('closed',h[n]);
+				}
+			}//if(m)
+		};//h.o
+	h[n].o.info={n:n,p:p};
+	h[n].on('open',h[n].o);
+	return;
+	}//H
+
+H(1,8007,'hello parent app');
