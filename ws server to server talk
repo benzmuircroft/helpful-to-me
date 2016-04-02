@@ -3,13 +3,15 @@ var wss=require('../node_modules/ws').Server//alow the crojob to talk to N
 	;
 cron[1]=new wss({port:8007});
 cron[1].on('connection',function(s){
-	cron[1].on('message',function(m){
+	s.on('message',function(m){
 		//do something with m
-		});});
+		});
+	try{s.send('test');}catch(e){console.log(e);}
+	});
 		
 	
 	
-	//try{cron.send('test');}catch(e){console.log(e);}
+	
 	
 	
 	
