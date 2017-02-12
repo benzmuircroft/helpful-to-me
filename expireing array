@@ -1,0 +1,11 @@
+var auths={//expireing array
+		timeout:1000*30
+	,	db:[]
+	,	delay:5
+	,	scheduleGC:function(){if(this.nextGC){return;}var ts=this.db.length?this.db[0][0]-Date.now()+this.delay:this.timeout;this.nextGC=setTimeout(this.gc.bind(this),ts);if(this.nextGC.unref){this.nextGC.unref();}}
+	,	gc:function(){while(this.db.length&&this.db[0][0]<Date.now()){this.db.shift();}this.nextGC=null;this.scheduleGC();}
+	,	push:function(elm){if(!this.db.length){this.scheduleGC();}this.db.push([Date.now()+this.timeout,elm]);}
+	,	shift:function(){var elm=this.db.shift();if(this.nextGC){clearTimeout(this.nextGC);this.nextGC=null;}this.scheduleGC();return elm&&elm[1];}//remove the first
+	,	all:function(){var db=JSON.clone(this.db);for(var i=0;i<db.length;++i){db[i]=db[i][1];}return db;}//to array
+	,	find:function(it){var all=this.all(),found;for(var i=0;i<all.length;++i){if(it==all[i]){found=all[i];break}}return found;}
+		}
