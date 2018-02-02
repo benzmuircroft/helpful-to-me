@@ -1,0 +1,38 @@
+function mask_change(bg){//this can be used for setting previews and icons
+                var img=new Image();
+                img.onload=function(){
+                    $('#big').append('<img src="'+img.src+'"/>');
+                    var x=$('#big').width()-$('#big img').width();//if number is positive the the image is smaller width than container (neg is bigger)
+                    var y=$('#big').height()-$('#big img').height();
+                    console.log('x:'+x,'y:'+y);
+                    if(x<0&&y<0){//bigger in general
+                        if(x>y){
+                            console.log('case a');
+                            $('#big img').css({'height':'100%','width':'auto'});
+                            }
+                        else{
+                            console.log('case b');
+                            $('#big img').css({'width':'100%','height':'auto'});
+                            }}
+                    else if(x>0&&y>0){//smaller in general
+                        if(x>y){
+                            console.log('case c');
+                            $('#big img').css({'width':'100%','height':'auto'});
+                            }
+                        else{
+                            console.log('case d');
+                            $('#big img').css({'height':'100%','width':'auto'});
+                            }}
+                    else{
+                        if(Math.abs(x)>Math.abs(y)){
+                            console.log('case e');
+                            $('#big img').css({'width':'100%','height':'auto'});
+                            }
+                        else{
+                            console.log('case f');
+                            $('#big img').css({'height':'100%','width':'auto'});
+                            }}
+                    };
+                img.src=bg;
+                return;
+                }
