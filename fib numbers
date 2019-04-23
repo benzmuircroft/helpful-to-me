@@ -1,0 +1,27 @@
+var f=[0,1];
+var i=34;
+while(i--){
+   f.push(f[f.length-1]+f[f.length-2]);
+   }
+
+console.log(f);
+
+// [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765, 10946, 17711, 28657, 46368]
+
+
+
+// Traverse up
+
+function ᐥfibonacci(n,up){return (up)?Math.round(n*1.61803398875):Math.round(n/1.61803398875);}
+
+console.log(ᐥfibonacci(4181,true));
+
+// 6765
+
+
+
+// Traverse down
+
+console.log(ᐥfibonacci(4181));
+
+// 2584
