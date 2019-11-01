@@ -1,0 +1,69 @@
+var exec=require('child_process').exec;
+//var pw='abcd';
+function test(pw,cb){
+    //console.log(pw);
+    //setTimeout(function(cb){cb();},150,cb);
+    exec('7z x l.zip -aoa -p'+pw+'',function(error,stdout,stderr){
+        if(stdout.indexOf('Wrong password?')!==-1){//error
+            //console.log('not: '+pw);
+            cb(pw);//setTimeout(function(pw,cb){cb(pw);},150,pw,cb);
+            }
+        else if(stdout.indexOf('Everything is Ok')!==-1){//success
+            console.log('password = '+pw);
+            }
+        });
+
+    }
+
+var chars=[
+    '!',':','$','%','&','/','=','?','{','[',']','}','-','+','*','~','#','1','2','3','4','5','6','7','8','9','0'
+    ];
+function rand(){return chars[Math.floor(Math.random()*chars.length)];}
+var find=rand()+rand()+rand()+rand()+rand();
+var i=[0,0,0,0,0];
+var c=[0,0,0,0,0];
+var breaking=false;
+var shift=0;
+var len = chars.length-1;//len should start at 0 and h will only be printed
+var count=0;
+var word;
+stop=false;
+
+function one(){
+    breaking=false;
+    for(;i[0]<len;i[0]++){//1 letters deep
+        for(;i[1]<len;i[1]++){//2 letters deep
+            for(;i[2]<len;i[2]++){//3 letters deep
+                for(;i[3]<len;i[3]++){//4 letters deep
+                    for(;i[4]<len;i[4]++){//5 letters deep
+                        if(breaking){break;}
+                        breaking=true;
+                        }
+                    if(breaking){break;}
+                    breaking=true;
+                    }
+                if(breaking){break;}
+                breaking=true;
+                }
+            if(breaking){break;}
+            breaking=true;
+            }
+        if(breaking){break;}
+        breaking=true;
+        }
+    if(find==chars[i[0]]+chars[i[1]]+chars[i[2]]+chars[i[3]]+chars[i[4]]){throw new Error('found: '+find);}
+    console.log(chars[i[0]]+chars[i[1]]+chars[i[2]]+chars[i[3]]+chars[i[4]],' ',' find: '+find);
+    if(stop){throw new Error(0);}
+    }
+
+function forever(){
+    if(i[0]==len&&i[1]==len&&i[2]==len&&i[3]==len&&i[4]==len){
+        chars=chars.concat(chars.shift());
+        i=[0,0,0,0,0];
+        if(chars[0]=='!'){throw new Error('not found: '+find);}
+        }
+    count+=1;
+    one();
+    setTimeout(function(){forever();},10);
+    }
+forever();
