@@ -1,0 +1,3 @@
+var r=['a','b','c'];
+(function count(j){if(j<r.length){total=Num(total).add("1").toString();count((j+=1));}else{return;}})(0);
+console.log('last');
