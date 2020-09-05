@@ -1,0 +1,44 @@
+loop will look ahead
+
+
+var keys=['a','b','c','d'];
+
+(function loop(i){
+    if(keys[i]=='condition'||keys[i]){
+        console.log(keys[i]);
+        }
+    if(keys[(i+=1)]){
+        loop(i);
+        }
+    else{
+        console.log('end');
+        }
+    })(0);
+a
+b
+c
+d
+end
+
+
+
+
+var keys=['a','b','c','d'];
+
+(function loop(i){
+    if(keys[i]){
+        console.log(keys[i]);
+        loop(i+1);
+        }
+    else{
+        console.log('end');
+        }
+    })(0);
+a
+b
+c
+d
+end
+
+
+
