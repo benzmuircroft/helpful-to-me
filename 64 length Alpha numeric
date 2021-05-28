@@ -1,0 +1,18 @@
+var a='';
+var x='aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ0123456789';
+a=new Function("a='';for(var i=0;i<64;i+=1){a=a+x[Math.floor(Math.random()*62)];}return a;");
+a();
+console.log(a,a.length);
+
+
+results
+
+
+i109UJyvQASF8TIXKP4NsvP4s8MCYX2IasxlSBYuuzbmqUyI9lN1jWw2rvrGsOos 64
+7xtOces5rUAm8ZRwcXeiLAOfTtz9aVelb7DOCdsEE9vHAYCQeQGUXuWJRGw7s5mL 64
+LNjAGJ836LF4Vjc6b3GRIYc0DtmuIg50QaLSSt0OQydZ7Gim2nQjJfDSplF86jym 64
+7PrsDkGwr3pUzNx58ivQT5zfrdE6HYGUXUncrQgcr128osMhZWz3QoPPuJ8AVyFC 64
+A4nKVQSLO1aa8ddN5kd3gJB2gZMfvUNWKRbaq16ntAQyOJPFlSg6qZAHhOrvjS16 64
+RUQIOSPvm4ln2Tov9sS2pfVWURxPWErRQuqO891UGcJ3AL9tiRV3mWFxxX8GxeJa 64
+snQp3hVbUhkficOpCEItLprdOKtCv4gqHFtDxp0oHojpdWtmMrAHgIsQSXOkLF1Z 64
+AN3OmaF7vxToiYWRfM2FP8gyyW9WmLabNtIwzYc3QQ1TFLdQBoGHNuDL742lmyyB 64
