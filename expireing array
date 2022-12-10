@@ -1,5 +1,8 @@
+
+JSON.clone=function(it){return JSON.parse(JSON.stringify(it));}
+
 var auths={//expireing array
-		timeout:1000*30
+		timeout:1000*30//garbage collect element after time passes
 	,	db:[]
 	,	delay:5
 	,	scheduleGC:function(){if(this.nextGC){return;}var ts=this.db.length?this.db[0][0]-Date.now()+this.delay:this.timeout;this.nextGC=setTimeout(this.gc.bind(this),ts);if(this.nextGC.unref){this.nextGC.unref();}}
